@@ -1,3 +1,14 @@
+use std::{
+    thread::{self, spawn},
+    time::Duration,
+};
+
+use aloy_engine::event_system::{
+    engine_events::application_events::ApplicationEvents,
+    event::Event,
+    event_queue::{self},
+};
+
 pub fn add_handler_for_event_with_data(
     engine: &mut aloy_engine::core::runner::applications::Application,
 ) {
@@ -39,7 +50,7 @@ pub fn add_handlers_for_example_event(
 
 pub fn add_event_with_out_data() {
     spawn(move || {
-        let q = EventQueue::initalize();
+        let q = event_queue::EventQueue::initalize();
         let mut counter = 0;
         loop {
             if counter == 3 {

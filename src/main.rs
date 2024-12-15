@@ -11,7 +11,7 @@ mod handlers;
 
 fn main() {
     let mut engine = aloy_engine::core::runner::applications::Application::default();
-    init_logger();
+    // init_logger();
 
     handlers::add_handlers_for_example_event(&mut engine);
     handlers::add_handler_for_event_with_data(&mut engine);
